@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Produits</title>
+</head>
+<body>
+    <h1>Nos Produits</h1>
+    <ul>
+        {% for produit in produits %}
+            <li>
+                <h2>{{ produit.nom }}</h2>
+                <p>{{ produit.description }}</p>
+                <p>Prix : {{ produit.prix }} €</p>
+                {% if produit.image %}
+                    <img src="{{ produit.image.url }}" width="200">
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
