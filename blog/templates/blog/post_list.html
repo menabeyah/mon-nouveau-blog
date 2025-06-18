@@ -1,17 +1,22 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
     <title>Django Girls blog</title>
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 </head>
 <body>
-    <h1><a href="/">Django Girls Blog</a></h1>
+    <h1>Django Girls Blog</h1>
 
     {% for post in posts %}
-        <div>
-            <p>published: {{ post.published_date }}</p>
-            <h2><a href="">{{ post.title }}</a></h2>
-            <p>{{ post.text }}</p>
+        <div class="post">
+            <div class="date">
+                publié: {{ post.published_date }}
+            </div>
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.text|linebreaks }}</p>
         </div>
     {% endfor %}
 </body>
