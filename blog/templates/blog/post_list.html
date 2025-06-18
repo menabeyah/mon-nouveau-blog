@@ -8,16 +8,18 @@
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 </head>
 <body>
-    <h1>Django Girls Blog</h1>
+    <header class="page-header">
+        <div class="container">
+            <h1><a href="/">Django Girls Blog</a></h1>
+        </div>
+    </header>
 
     {% for post in posts %}
-        <div class="post">
-            <div class="date">
-                publié: {{ post.published_date }}
-            </div>
-            <h2>{{ post.title }}</h2>
-            <p>{{ post.text|linebreaks }}</p>
-        </div>
+        <article class="post">
+            <time>Date de publication: {{ post.published_date }}</time>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </article>
     {% endfor %}
 </body>
 </html>
